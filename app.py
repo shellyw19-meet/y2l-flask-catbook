@@ -12,7 +12,10 @@ def catbook_home():
 
 @app.route('/cats/<int:id>')
 def vote_cats(id):
-	
-	return render_template()
+	cat = get_cat_by_id(id)
+	return render_template(
+		'cat.html', cat = cat)
+
+
 if __name__ == '__main__':
    app.run(debug = True)
